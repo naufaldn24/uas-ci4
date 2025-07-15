@@ -1,0 +1,194 @@
+/* --- Konfigurasi Dasar & Palet Warna (Tema Terang) --- */
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+    --background-light: #f8f9fa;
+    --background-card: #ffffff;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --accent-blue: #0d6efd;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* --- Navbar Kustom --- */
+.navbar-custom {
+    background-color: var(--background-card);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-brand {
+    font-family: var(--heading-font);
+    font-size: 1.75rem;
+    color: var(--accent-blue);
+}
+
+.navbar-custom .nav-link {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0 0.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-custom .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover::after,
+.navbar-custom .nav-link.active::after {
+    width: 50%;
+}
+
+/* ================================================== */
+/* --- PERUBAHAN UTAMA UNTUK HERO SECTION DENGAN GAMBAR --- */
+/* ================================================== */
+.hero-section {
+    padding: 10rem 0;
+    text-align: center;
+    position: relative; /* Diperlukan untuk overlay */
+    background-image: url('/images/hero.jpg'); /* Menggunakan gambar Anda */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Lapisan overlay gelap agar teks mudah dibaca */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Hitam dengan 50% transparansi */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Memastikan konten berada di atas overlay */
+}
+
+/* Mengubah warna teks di hero section menjadi putih */
+.hero-content .display-3 {
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Bayangan agar teks lebih tajam */
+}
+
+.hero-content .lead {
+    color: rgba(255, 255, 255, 0.85); /* Putih sedikit transparan */
+    max-width: 600px;
+    margin: 1.5rem auto 0 auto;
+}
+/* --- AKHIR DARI PERUBAHAN --- */
+
+
+/* --- Tombol Kustom --- */
+.btn-custom {
+    background-color: var(--accent-blue);
+    color: #fff;
+    border: 2px solid var(--accent-blue);
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.btn-custom:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Kartu Layanan Kustom --- */
+.service-card {
+    background-color: var(--background-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
+}
+
+.service-card .card-title {
+    font-family: var(--primary-font);
+    font-weight: 700;
+}
+
+.service-card p.text-muted {
+    color: #6c757d !important;
+}
+
+/* --- Halaman Dalam (About, Services) --- */
+.page-header {
+    padding: 8rem 0 4rem 0;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+/* --- Footer Kustom --- */
+.footer-custom {
+    background-color: var(--background-card);
+    color: var(--text-muted);
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-custom a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-custom a:hover {
+    color: var(--accent-blue);
+}
+
+.footer-bottom {
+    background-color: var(--background-light);
+    color: #888;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/* FIX FINAL UNTUK SEMUA TEKS ABU-ABU (MUTED) */
+.text-muted {
+    color: #6c757d !important;
+}
